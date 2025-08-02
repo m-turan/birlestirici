@@ -80,10 +80,10 @@ class XMLBirlestirici:
                 print(f"Dosya: {dosya_adi}")
             else:
                 print("\n=== Hosting Bilgileri ===")
-                ftp_host = input("FTP Host (örn: ftp.example.com): ").strip()
-                ftp_user = input("FTP Kullanıcı Adı: ").strip()
-                ftp_pass = input("FTP Şifre: ").strip()
-                ftp_path = input("FTP Yolu (örn: /public_html/): ").strip()
+                ftp_host = "ftp.eterella.com"
+                ftp_user = "windamdx"
+                ftp_pass = "c_bJ!-PGMwG57#Hx"
+                ftp_path ="/public_html/yasinxml/"
             
             if not ftp_host or not ftp_user or not ftp_pass:
                 print("❌ Hosting bilgileri eksik!")
