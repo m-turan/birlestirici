@@ -53,8 +53,19 @@ class XMLBirlestirici:
         for i, root in enumerate(xml_roots):
             if root is None:
                 continue
-          
-       
+                
+            print(f"XML dosyası {i+1} işleniyor...")
+            
+            # products altındaki tüm product elementlerini bul
+            products = root.findall(".//product")
+            
+            for product in products:
+                # Ürünü kopyala ve ana listeye ekle
+                merged_root.append(product)
+                print(f"  ✓ Ürün eklendi: {product.find('name').text if product.find('name') is not None else 'İsimsiz'}")
+        
+        print(f"\nToplam {len(merged_root.findall('.//product'))} ürün birleştirildi.")
+        return merged_root
     
     def xml_dosyasini_hosting_e_yukle(self, root: ET.Element, dosya_adi: str = "tumurunler.xml"):
         """Birleştirilmiş XML'i hostinge yükler"""
@@ -80,10 +91,10 @@ class XMLBirlestirici:
                 print(f"Dosya: {dosya_adi}")
             else:
                 print("\n=== Hosting Bilgileri ===")
-                ftp_host = "ftp.eterella.com"
-                ftp_user = "windamdx"
-                ftp_pass = "c_bJ!-PGMwG57#Hx"
-                ftp_path ="/public_html/yasinxml/"
+                ftp_host = input("FTP Host (örn: ftp.example.com): ").strip()
+                ftp_user = input("FTP Kullanıcı Adı: ").strip()
+                ftp_pass = input("FTP Şifre: ").strip()
+                ftp_path = input("FTP Yolu (örn: /public_html/): ").strip()
             
             if not ftp_host or not ftp_user or not ftp_pass:
                 print("❌ Hosting bilgileri eksik!")
