@@ -53,19 +53,8 @@ class XMLBirlestirici:
         for i, root in enumerate(xml_roots):
             if root is None:
                 continue
-                
-            print(f"XML dosyası {i+1} işleniyor...")
-            
-            # products altındaki tüm product elementlerini bul
-            products = root.findall(".//product")
-            
-            for product in products:
-                # Ürünü kopyala ve ana listeye ekle
-                merged_root.append(product)
-                print(f"  ✓ Ürün eklendi: {product.find('name').text if product.find('name') is not None else 'İsimsiz'}")
-        
-        print(f"\nToplam {len(merged_root.findall('.//product'))} ürün birleştirildi.")
-        return merged_root
+          
+       
     
     def xml_dosyasini_hosting_e_yukle(self, root: ET.Element, dosya_adi: str = "tumurunler.xml"):
         """Birleştirilmiş XML'i hostinge yükler"""
