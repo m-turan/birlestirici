@@ -185,8 +185,7 @@ def main():
         "https://www.eterella.com/yasinxml/bayanerkek.xml",
         "https://www.eterella.com/yasinxml/jartiyerdeneme.xml",
         "https://www.eterella.com/yasinxml/nightdeneme.xml",
-        "https://www.eterella.com/yasinxml/stilmondeneme.xml",
-        "https://www.eterella.com/yasinxml/yntdeneme.xml"
+        "https://www.eterella.com/yasinxml/stilmondeneme.xml"
     ]
     
     print(f"Toplam {len(urls)} URL işlenecek:")
