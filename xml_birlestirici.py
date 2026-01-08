@@ -179,7 +179,6 @@ def main():
     # URL'leri buraya ekleyin
     urls = [
         "https://www.eterella.com/yasinxml/ariasdeneme.xml",
-        "https://www.eterella.com/yasinxml/gallipolideneme.xml",
         "https://www.eterella.com/yasinxml/baciodeneme.xml",
         "https://www.eterella.com/yasinxml/bayanbayandeneme.xml",
         "https://www.eterella.com/yasinxml/bayanerkek.xml",
